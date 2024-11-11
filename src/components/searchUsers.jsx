@@ -1,9 +1,9 @@
 import React from 'react'
 
-export const SearchUsers = ({ search, resultCount = 0 }) => {
+export const SearchUsers = ({ search }) => {
 
-  const onSearch = (e) => {
-    search(e.target.value);
+  const onSearch = (event) => {
+    search(event.target.value);
   };
 
   return (
@@ -11,9 +11,6 @@ export const SearchUsers = ({ search, resultCount = 0 }) => {
       Search users by title:
       <span style={{ marginLeft: 8 }}>
         <input type="text" onChange={onSearch} autoFocus />
-      </span>
-      <span style={{ marginLeft: 8 }}>
-        ({resultCount})
       </span>
     </div>
   );

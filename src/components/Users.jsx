@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import User from "./User.jsx";
-import { SearchUsers } from "./searchUsers.jsx";
-import debounce from "../helpers/debounce.js";
+import { SearchUsers } from "./SearchUsers";
+import debounce from "../helpers/debounce";
 
 const Users = () => {
   const [users, setUsers] = useState([]);
@@ -62,7 +62,7 @@ const Users = () => {
       <h2>Users List</h2>
       {!!totalUsers.current.length && (
         <>
-          <SearchUsers search={onSearch} resultCount={users.length} />
+          <SearchUsers search={onSearch} />
           {users.map(({ id, title, body, wordCount }) => (
             <User
               key={id}
